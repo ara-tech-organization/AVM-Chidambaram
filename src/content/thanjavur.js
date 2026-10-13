@@ -1,4 +1,6 @@
-﻿export const clinic = {
+import { asset } from '../lib/asset'
+
+export const clinic = {
   name: 'AVM Smiles',
   phone: '+91 8071404431',
   phoneHref: 'tel:+918071404431',
@@ -31,16 +33,16 @@ export const heroChips = [
 ]
 
 export const services = [
-  { icon: 'Scissors', title: 'Tooth Extraction', slug: 'tooth-extraction', image: '/assets/images/site/tooth-extraction.webp', text: 'Gentle, pain-managed extractions performed by skilled dentists using modern instruments and safe anesthesia methods.' },
-  { icon: 'Crown', title: 'Crowns & Bridges', slug: 'dental-crowns-and-bridges', image: '/assets/images/site/dental-crowns-and-bridges.jpg', text: 'Restore missing or damaged teeth with long-lasting, natural-looking crowns and bridges built for everyday use.' },
-  { icon: 'Smile', title: 'Dentures', slug: 'dental-dentures', image: '/assets/images/site/dental-dentures.png', text: 'Comfortable fixed and removable denture options crafted to replace missing teeth and bring back your natural smile.' },
-  { icon: 'Activity', title: 'Root Canal Treatment', slug: 'root-canal-treatment', image: '/assets/images/site/root-canal-treatment.jpg', text: 'Relieve pain and save infected teeth through precise root canal therapy that preserves your natural tooth structure.' },
-  { icon: 'Sparkles', title: 'Teeth Whitening', slug: 'teeth-whitening-treatment', image: '/assets/images/site/teeth-whitening-treatment.webp', text: 'Expert whitening treatments that lift stubborn stains and brighten your smile by several noticeable shades.' },
-  { icon: 'Droplets', title: 'Scaling & Polishing', slug: 'dental-scaling-polishing', image: '/assets/images/site/dental-scaling-polishing.jpg', text: 'Thorough cleaning sessions that clear away plaque, tartar, and surface stains for healthier gums and teeth.' },
-  { icon: 'Layers', title: 'Invisible Aligners', slug: 'invisible-aligners', image: '/assets/images/site/invisible-aligners.webp', text: 'Discreet, removable aligners that gradually shift teeth into place without the look of metal braces.' },
-  { icon: 'Grip', title: 'Braces', slug: 'invisible-braces', image: '/assets/images/site/invisible-braces.jpg', text: 'Complete orthodontic solutions for kids, teens, and adults to fix misalignment and bite issues effectively.' },
-  { icon: 'Gem', title: 'Veneers', slug: 'dental-veneer-treatment', image: '/assets/images/site/dental-veneer-treatment.jpg', text: 'Personalized veneers crafted to refine the shape, shade, and overall look of your teeth.' },
-  { icon: 'Anchor', title: 'Dental Implants', slug: 'dental-implants-treatment', image: '/assets/images/site/dental-implants-treatment.webp', text: 'Durable tooth-replacement solutions that look, feel, and perform just like your natural teeth.' },
+  { icon: 'Scissors', title: 'Tooth Extraction', slug: 'tooth-extraction', image: asset('/assets/images/site/tooth-extraction.webp'), text: 'Gentle, pain-managed extractions performed by skilled dentists using modern instruments and safe anesthesia methods.' },
+  { icon: 'Crown', title: 'Crowns & Bridges', slug: 'dental-crowns-and-bridges', image: asset('/assets/images/site/dental-crowns-and-bridges.jpg'), text: 'Restore missing or damaged teeth with long-lasting, natural-looking crowns and bridges built for everyday use.' },
+  { icon: 'Smile', title: 'Dentures', slug: 'dental-dentures', image: asset('/assets/images/site/dental-dentures.png'), text: 'Comfortable fixed and removable denture options crafted to replace missing teeth and bring back your natural smile.' },
+  { icon: 'Activity', title: 'Root Canal Treatment', slug: 'root-canal-treatment', image: asset('/assets/images/site/root-canal-treatment.jpg'), text: 'Relieve pain and save infected teeth through precise root canal therapy that preserves your natural tooth structure.' },
+  { icon: 'Sparkles', title: 'Teeth Whitening', slug: 'teeth-whitening-treatment', image: asset('/assets/images/site/teeth-whitening-treatment.webp'), text: 'Expert whitening treatments that lift stubborn stains and brighten your smile by several noticeable shades.' },
+  { icon: 'Droplets', title: 'Scaling & Polishing', slug: 'dental-scaling-polishing', image: asset('/assets/images/site/dental-scaling-polishing.jpg'), text: 'Thorough cleaning sessions that clear away plaque, tartar, and surface stains for healthier gums and teeth.' },
+  { icon: 'Layers', title: 'Invisible Aligners', slug: 'invisible-aligners', image: asset('/assets/images/site/invisible-aligners.webp'), text: 'Discreet, removable aligners that gradually shift teeth into place without the look of metal braces.' },
+  { icon: 'Grip', title: 'Braces', slug: 'invisible-braces', image: asset('/assets/images/site/invisible-braces.jpg'), text: 'Complete orthodontic solutions for kids, teens, and adults to fix misalignment and bite issues effectively.' },
+  { icon: 'Gem', title: 'Veneers', slug: 'dental-veneer-treatment', image: asset('/assets/images/site/dental-veneer-treatment.jpg'), text: 'Personalized veneers crafted to refine the shape, shade, and overall look of your teeth.' },
+  { icon: 'Anchor', title: 'Dental Implants', slug: 'dental-implants-treatment', image: asset('/assets/images/site/dental-implants-treatment.webp'), text: 'Durable tooth-replacement solutions that look, feel, and perform just like your natural teeth.' },
 ]
 
 export const why = [
@@ -76,16 +78,16 @@ export const faqs = [
 ]
 
 export const gallerySlots = [
-  { label: 'Modern treatment room', src: '/assets/images/site/clinic-interior.jpg' },
-  { label: 'Dental chair and equipment', src: '/assets/images/site/who-we-are.png' },
-  { label: 'Our clinic', src: '/assets/images/site/clinic-cta.jpg' },
-  { label: 'A higher standard of dental care', src: '/assets/images/site/higher-standard.jpg' },
-  { label: 'Smiling patient', src: '/assets/images/site/hero-patient.jpg' },
-  { label: 'Dental implants care', src: '/assets/images/site/dental-implants-treatment.webp' },
+  { label: 'Modern treatment room', src: asset('/assets/images/site/clinic-interior.jpg') },
+  { label: 'Dental chair and equipment', src: asset('/assets/images/site/who-we-are.png') },
+  { label: 'Our clinic', src: asset('/assets/images/site/clinic-cta.jpg') },
+  { label: 'A higher standard of dental care', src: asset('/assets/images/site/higher-standard.jpg') },
+  { label: 'Smiling patient', src: asset('/assets/images/site/hero-patient.jpg') },
+  { label: 'Dental implants care', src: asset('/assets/images/site/dental-implants-treatment.webp') },
 ]
 
 export const transformations = [
-  { title: 'Complete Smile Transformation', before: '/assets/images/site/before-1.png', after: '/assets/images/site/after-1.png' },
-  { title: 'Smile Makeover', before: '/assets/images/site/before-2.png', after: '/assets/images/site/after-2.png' },
-  { title: 'Restored Confidence', before: '/assets/images/site/before-3.jpg', after: '/assets/images/site/after-3.jpg' },
+  { title: 'Complete Smile Transformation', before: asset('/assets/images/site/before-1.png'), after: asset('/assets/images/site/after-1.png') },
+  { title: 'Smile Makeover', before: asset('/assets/images/site/before-2.png'), after: asset('/assets/images/site/after-2.png') },
+  { title: 'Restored Confidence', before: asset('/assets/images/site/before-3.jpg'), after: asset('/assets/images/site/after-3.jpg') },
 ]

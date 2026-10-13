@@ -1,16 +1,24 @@
-# React + Vite
+# AVM Smiles - Thanjavur Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Landing page and 10 service pages for AVM Smiles Dental Clinic, Thanjavur.
 
-Currently, two official plugins are available:
+Live: https://ara-tech-organization.github.io/AVM-Tnj/thanjavur
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Stack
+React 19, Vite, Tailwind CSS v4, Lucide icons, React Router. Font: Poppins.
 
-## React Compiler
+## Develop
+```
+npm install
+npm run dev
+npm run build
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Where things live
+- `src/content/thanjavur.js` landing page copy, services, FAQs, contact details
+- `src/content/services.json` service page copy (generated from the content doc)
+- `src/assets/images/` logo and site images (fetched from avmsmilesdental.com)
+- `MASTER_PROMPT.md` design and build brief
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Deploy
+Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site and publishes it to GitHub Pages.

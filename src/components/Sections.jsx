@@ -1,4 +1,5 @@
 ﻿import { useState } from 'react'
+import { asset } from '../lib/asset'
 import { Icon, Btn, Reveal, SectionHead, Photo, A } from './ui'
 import BookingForm from './BookingForm'
 import { clinic, heroChips, services, why, steps, testimonials, faqs, gallerySlots, transformations } from '../content/thanjavur'
@@ -37,7 +38,7 @@ export function Hero({ treatment, setTreatment }) {
 
         <div className="relative">
           <div className="rise relative aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5] overflow-hidden rounded-[28px] shadow-[0_18px_48px_-16px_rgba(40,36,89,.45)]" style={{ '--d': '300ms' }}>
-            <Photo src="/assets/images/site/hero-patient.jpg" alt="Smiling patient at AVM Smiles dental clinic" label="Hero photo" icon="Smile" />
+            <Photo src={asset('/assets/images/site/hero-patient.jpg')} alt="Smiling patient at AVM Smiles dental clinic" label="Hero photo" icon="Smile" />
           </div>
           <div className="floaty absolute -left-3 sm:-left-8 bottom-10 rounded-2xl bg-white px-4 py-3 shadow-[0_18px_48px_-16px_rgba(40,36,89,.35)] flex items-center gap-3">
             <span className="grid h-10 w-10 place-items-center rounded-full bg-brand-50 text-brand-600"><Icon name="HeartPulse" /></span>
@@ -84,7 +85,7 @@ export function About() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 grid gap-12 lg:grid-cols-2 items-center">
         <Reveal>
           <div className="aspect-[4/3] overflow-hidden rounded-[28px] shadow-[0_18px_48px_-16px_rgba(40,36,89,.35)]">
-            <Photo src="/assets/images/site/who-we-are.png" alt="Modern AVM Smiles dental treatment room" label="Clinic photo" icon="Building2" />
+            <Photo src={asset('/assets/images/site/who-we-are.png')} alt="Modern AVM Smiles dental treatment room" label="Clinic photo" icon="Building2" />
           </div>
         </Reveal>
         <div>
@@ -308,7 +309,7 @@ export function FAQ() {
 export function BookSection({ treatment, setTreatment }) {
   return (
     <section id="book" className="relative overflow-hidden bg-gradient-to-br from-brand-700 via-brand-600 to-brand-900 py-20 lg:py-28">
-      <img src="/assets/images/site/clinic-cta.jpg" alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-15 mix-blend-luminosity" />
+      <img src={asset('/assets/images/site/clinic-cta.jpg')} alt="" aria-hidden="true" loading="lazy" className="absolute inset-0 h-full w-full object-cover opacity-15 mix-blend-luminosity" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 grid gap-12 lg:grid-cols-2 items-center">
         <Reveal className="text-white">
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-brand-200 mb-3">Book now</p>

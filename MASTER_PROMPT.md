@@ -1,4 +1,4 @@
-﻿# MASTER PROMPT: AVM Smiles Thanjavur Landing Page
+# MASTER PROMPT: AVM Smiles Thanjavur Landing Page
 
 Paste this whole file into the build session. It is self-contained.
 
@@ -21,7 +21,7 @@ Content source: the Thanjavur pages of the Google Doc (copy is final; do not rew
 
 ## 3. Brand assets and theme (taken from avmsmilesdental.com)
 
-**Logo**: https://avmsmilesdental.com/assets/logo-DycUICmx.png (PNG with alpha, 1039 x 625). A local copy is saved at `public/assets/images/avm-logo.png`. Use it in the header (height 44px mobile, 52px desktop), in the footer (on a white chip if on a dark background), and as the favicon source. Never recolour or stretch it. Keep clear space equal to the height of the logo's "A".
+**Logo**: https://avmsmilesdental.com/assets/logo-DycUICmx.png (PNG with alpha, 1039 x 625). A local copy is saved at `src/assets/images/avm-logo.png`. Use it in the header (height 44px mobile, 52px desktop), in the footer (on a white chip if on a dark background), and as the favicon source. Never recolour or stretch it. Keep clear space equal to the height of the logo's "A".
 
 **Colour tokens** (exact values from the corporate stylesheet):
 
@@ -49,7 +49,7 @@ Rule of thumb: roughly 70 percent white/neutral, 25 percent indigo, 5 percent re
 
 The corporate site ships only the logo as a raster asset, so the "images for sections" are sourced as follows. Prefer, in order: (a) real clinic photos supplied by the client for Thanjavur (gallery page expects clinic, facilities, treatment rooms); (b) licensed stock (Unsplash / Pexels) that is clean, bright, and shows dental care with natural expressions; (c) neutral indigo-tinted placeholders with a clear `TODO: replace` marker.
 
-Place all in `public/assets/images/` as WebP, max 1600px wide, with `loading="lazy"` (hero eager, `fetchpriority="high"`), explicit width/height, and meaningful alt text without emojis.
+Place all in `src/assets/images/` as WebP, max 1600px wide, with `loading="lazy"` (hero eager, `fetchpriority="high"`), explicit width/height, and meaningful alt text without emojis.
 
 | Section | Image needed | Notes |
 |---|---|---|

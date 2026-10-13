@@ -23,7 +23,7 @@ export default function App() {
   const shared = { treatment, setTreatment }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, '')}>
       <ScrollManager />
       <TopBar />
       <Header />

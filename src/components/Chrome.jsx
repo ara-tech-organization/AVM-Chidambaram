@@ -1,4 +1,5 @@
 ﻿import { useEffect, useRef, useState } from 'react'
+import { asset } from '../lib/asset'
 import { Icon, Btn, A } from './ui'
 import { clinic, nav, services } from '../content/thanjavur'
 
@@ -47,7 +48,7 @@ export function Header() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 h-[68px] lg:h-[76px] flex items-center justify-between">
         <A href="/thanjavur" aria-label="AVM Smiles home">
-          <img src="/assets/images/avm-logo.png" alt="AVM Smiles" className="h-11 lg:h-[52px] w-auto" width="87" height="52" />
+          <img src={asset('/assets/images/avm-logo.png')} alt="AVM Smiles" className="h-11 lg:h-[52px] w-auto" width="87" height="52" />
         </A>
 
         <nav className="hidden lg:flex items-center gap-1" aria-label="Main">
@@ -129,7 +130,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <span className="inline-block bg-white rounded-2xl p-3">
-            <img src="/assets/images/avm-logo.png" alt="AVM Smiles" className="h-12 w-auto" />
+            <img src={asset('/assets/images/avm-logo.png')} alt="AVM Smiles" className="h-12 w-auto" />
           </span>
           <p className="mt-5 text-sm leading-relaxed">Strong Teeth. Bright Smiles. Care for Life.</p>
           <div className="mt-5 flex gap-3">
