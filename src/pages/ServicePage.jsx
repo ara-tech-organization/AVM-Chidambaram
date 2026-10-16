@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Navigate, useParams } from 'react-router'
 import { Icon, Btn, Reveal, A } from '../components/ui'
 import BookingForm from '../components/BookingForm'
-import { clinic, services } from '../content/thanjavur'
+import { clinic, services } from '../content/kumbakonam'
 import pages from '../content/services.json'
 
 // A heading (h3 or card) absorbs the paragraphs / lists that follow it, so each
@@ -46,7 +46,7 @@ function useSeo(page) {
       setMeta('meta[property="og:title"]', 'content', page.metaTitle),
       setMeta('meta[property="og:description"]', 'content', page.metaDescription),
       setMeta('meta[name="twitter:title"]', 'content', page.metaTitle),
-      setMeta('link[rel="canonical"]', 'href', `https://avmsmilesdental.com/thanjavur/${page.slug}`),
+      setMeta('link[rel="canonical"]', 'href', `https://avmsmilesdental.com/kumbakonam/${page.slug}`),
     ]
     return () => {
       document.title = prevTitle
@@ -224,9 +224,9 @@ export default function ServicePage({ treatment, setTreatment }) {
     return { intro, cta, main }
   }, [page])
 
-  if (slug === 'gallery') return <Navigate to="/thanjavur#gallery" replace />
-  if (slug === 'contact-us') return <Navigate to="/thanjavur#contact" replace />
-  if (!page || !svc) return <Navigate to="/thanjavur" replace />
+  if (slug === 'gallery') return <Navigate to="/kumbakonam#gallery" replace />
+  if (slug === 'contact-us') return <Navigate to="/kumbakonam#contact" replace />
+  if (!page || !svc) return <Navigate to="/kumbakonam" replace />
   const { intro, cta, main } = parts
 
   return (
@@ -236,9 +236,9 @@ export default function ServicePage({ treatment, setTreatment }) {
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_.8fr] lg:py-16">
           <div>
             <nav aria-label="Breadcrumb" className="rise flex flex-wrap items-center gap-1.5 text-xs text-muted">
-              <A href="/thanjavur" className="hover:text-brand-600">Home</A>
+              <A href="/kumbakonam" className="hover:text-brand-600">Home</A>
               <Icon name="ChevronRight" size={14} />
-              <A href="/thanjavur#services" className="hover:text-brand-600">Services</A>
+              <A href="/kumbakonam#services" className="hover:text-brand-600">Services</A>
               <Icon name="ChevronRight" size={14} />
               <span className="font-medium text-brand-700">{svc.title}</span>
             </nav>
@@ -254,7 +254,7 @@ export default function ServicePage({ treatment, setTreatment }) {
           </div>
           <div className="rise hidden lg:block" style={{ '--d': '300ms' }}>
             <div className="relative">
-              <img src={svc.image} alt={`${svc.title} at AVM Smiles Thanjavur`} className="aspect-[4/3] w-full rounded-[28px] object-cover shadow-[0_18px_48px_-16px_rgba(40,36,89,.45)]" />
+              <img src={svc.image} alt={`${svc.title} at AVM Smiles Kumbakonam`} className="aspect-[4/3] w-full rounded-[28px] object-cover shadow-[0_18px_48px_-16px_rgba(40,36,89,.45)]" />
               <span className="floaty absolute -bottom-5 left-6 flex items-center gap-3 rounded-2xl bg-white px-4 py-3 shadow-[0_18px_48px_-16px_rgba(40,36,89,.35)]">
                 <span className="grid h-10 w-10 place-items-center rounded-full bg-brand-50 text-brand-600"><Icon name={svc.icon} /></span>
                 <span className="text-sm font-semibold text-brand-900">{svc.title}</span>
@@ -304,7 +304,7 @@ export default function ServicePage({ treatment, setTreatment }) {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {services.filter((s) => s.slug !== slug).map((s, i) => (
               <Reveal key={s.slug} delay={(i % 5) * 60}>
-                <A href={`/thanjavur/${s.slug}`} className="group flex h-full items-center gap-3 rounded-2xl border border-line bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_48px_-16px_rgba(40,36,89,.3)]">
+                <A href={`/kumbakonam/${s.slug}`} className="group flex h-full items-center gap-3 rounded-2xl border border-line bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_48px_-16px_rgba(40,36,89,.3)]">
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white"><Icon name={s.icon} size={22} /></span>
                   <span className="text-sm font-semibold text-brand-900">{s.title}</span>
                 </A>

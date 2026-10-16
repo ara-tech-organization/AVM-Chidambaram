@@ -1,8 +1,8 @@
-# AVM Smiles - Thanjavur Landing Page
+# AVM Smiles - Kumbakonam Landing Page
 
-Landing page and 10 service pages for AVM Smiles Dental Clinic, Thanjavur.
+Landing page and 10 service pages for AVM Smiles Dental Clinic, Kumbakonam.
 
-Live: https://ara-tech-organization.github.io/AVM-Tnj/thanjavur
+Live: https://ara-tech-organization.github.io/AVM-Kumbakonam/kumbakonam
 
 ## Stack
 React 19, Vite, Tailwind CSS v4, Lucide icons, React Router. Font: Poppins.
@@ -15,7 +15,7 @@ npm run build
 ```
 
 ## Where things live
-- `src/content/thanjavur.js` landing page copy, services, FAQs, contact details
+- `src/content/kumbakonam.js` landing page copy, services, FAQs, contact details
 - `src/content/services.json` service page copy (generated from the content doc)
 - `src/assets/images/` logo and site images (fetched from avmsmilesdental.com)
 - `MASTER_PROMPT.md` design and build brief

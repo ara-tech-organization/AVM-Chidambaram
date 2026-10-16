@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Icon, Btn } from './ui'
-import { clinic, services } from '../content/thanjavur'
+import { clinic, services } from '../content/kumbakonam'
 
 const field =
   'w-full rounded-xl border border-line bg-white px-4 py-3 text-sm text-ink placeholder:text-muted/70 transition-all duration-200 focus:border-brand-500 focus:ring-4 focus:ring-brand-100 focus:outline-none'
@@ -22,14 +22,14 @@ export default function BookingForm({ id, treatment, setTreatment, dark = false 
     if (Object.keys(er).length) return
 
     setBusy(true)
-    const payload = { ...form, treatment: treatment || 'Not specified', clinic: 'Thanjavur' }
+    const payload = { ...form, treatment: treatment || 'Not specified', clinic: 'Kumbakonam' }
     const endpoint = import.meta.env.VITE_FORM_ENDPOINT
     try {
       if (endpoint) {
         const r = await fetch(endpoint, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
         if (!r.ok) throw new Error('failed')
       } else {
-        const msg = `Appointment request - AVM Smiles Thanjavur%0AName: ${payload.name}%0APhone: ${payload.phone}%0ADate: ${payload.date || 'Flexible'}%0ATreatment: ${payload.treatment}`
+        const msg = `Appointment request - AVM Smiles Kumbakonam%0AName: ${payload.name}%0APhone: ${payload.phone}%0ADate: ${payload.date || 'Flexible'}%0ATreatment: ${payload.treatment}`
         window.open(`${clinic.whatsappHref}?text=${msg}`, '_blank', 'noopener')
       }
       setDone(true)

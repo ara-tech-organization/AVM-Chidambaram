@@ -29,10 +29,10 @@ export default function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Navigate to="/thanjavur" replace />} />
-          <Route path="/thanjavur" element={<Landing {...shared} />} />
-          <Route path="/thanjavur/:slug" element={<ServicePage {...shared} />} />
-          <Route path="*" element={<Navigate to="/thanjavur" replace />} />
+          <Route path="/" element={<Navigate to="/kumbakonam" replace />} />
+          <Route path="/kumbakonam" element={<Landing {...shared} />} />
+          <Route path="/kumbakonam/:slug" element={<ServicePage {...shared} />} />
+          <Route path="*" element={<Navigate to="/kumbakonam" replace />} />
         </Routes>
       </main>
       <Footer />

@@ -1,7 +1,7 @@
 ﻿import { useEffect, useRef, useState } from 'react'
 import { asset } from '../lib/asset'
 import { Icon, Btn, A } from './ui'
-import { clinic, nav, services } from '../content/thanjavur'
+import { clinic, nav, services } from '../content/kumbakonam'
 
 export function TopBar() {
   return (
@@ -47,7 +47,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 h-[68px] lg:h-[76px] flex items-center justify-between">
-        <A href="/thanjavur" aria-label="AVM Smiles home">
+        <A href="/kumbakonam" aria-label="AVM Smiles home">
           <img src={asset('/assets/images/avm-logo.png')} alt="AVM Smiles" className="h-11 lg:h-[52px] w-auto" width="87" height="52" />
         </A>
 
@@ -61,7 +61,7 @@ export function Header() {
                 <div className="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-200 absolute left-0 top-full pt-2">
                   <div className="w-72 rounded-2xl bg-white p-2 shadow-[0_18px_48px_-16px_rgba(40,36,89,.35)] border border-line">
                     {services.map((s) => (
-                      <A key={s.slug} href={`/thanjavur/${s.slug}`} className="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-ink hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                      <A key={s.slug} href={`/kumbakonam/${s.slug}`} className="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-ink hover:bg-brand-50 hover:text-brand-600 transition-colors">
                         <Icon name={s.icon} size={18} className="text-brand-500" /> {s.title}
                       </A>
                     ))}
@@ -105,7 +105,7 @@ export function Header() {
           ))}
           <p className="mt-6 mb-2 text-xs font-semibold uppercase tracking-[.18em] text-muted">Services</p>
           {services.map((s) => (
-            <A key={s.slug} href={`/thanjavur/${s.slug}`} className="flex items-center gap-3 py-2 text-sm text-ink">
+            <A key={s.slug} href={`/kumbakonam/${s.slug}`} className="flex items-center gap-3 py-2 text-sm text-ink">
               <Icon name={s.icon} size={18} className="text-brand-500" /> {s.title}
             </A>
           ))}
@@ -132,7 +132,7 @@ export function Footer() {
           <span className="inline-block bg-white rounded-2xl p-3">
             <img src={asset('/assets/images/avm-logo.png')} alt="AVM Smiles" className="h-12 w-auto" />
           </span>
-          <p className="mt-5 text-sm leading-relaxed">Strong Teeth. Bright Smiles. Care for Life.</p>
+          <p className="mt-5 text-sm leading-relaxed">Healthy Smiles Start Here &ndash; Care That Lasts.</p>
           <div className="mt-5 flex gap-3">
             {social.map(([label, href, d]) => (
               <A key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="grid place-items-center h-10 w-10 rounded-full bg-white/10 hover:bg-accent hover:-translate-y-0.5 text-white transition-all duration-200">
@@ -153,7 +153,7 @@ export function Footer() {
           <h3 className="text-white font-semibold mb-4">Services</h3>
           <ul className="space-y-2.5 text-sm">
             {services.map((s) => (
-              <li key={s.slug}><A href={`/thanjavur/${s.slug}`} className="hover:text-white transition-colors">{s.title}</A></li>
+              <li key={s.slug}><A href={`/kumbakonam/${s.slug}`} className="hover:text-white transition-colors">{s.title}</A></li>
             ))}
           </ul>
         </div>
@@ -169,7 +169,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-xs text-brand-300 pb-24 lg:pb-5">
-        &copy; {new Date().getFullYear()} AVM Smiles Dental Clinic, Thanjavur. All rights reserved.
+        &copy; {new Date().getFullYear()} AVM Smiles Dental Clinic, Kumbakonam. All rights reserved.
       </div>
     </footer>
   )
