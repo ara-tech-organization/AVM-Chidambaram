@@ -2,6 +2,7 @@
  "tooth-extraction": {
   "metaTitle": "Best Tooth Extraction in Thanjavur | AVM Smiles",
   "metaDescription": "Get the best tooth extraction in Thanjavur at AVM Smiles. Safe, comfortable treatment by experienced dentists. Visit a trusted tooth extraction clinic near Thanjavur.",
+  "metaKeywords": "Tooth Extraction in Thanjavur, Tooth Extraction near Thanjavur",
   "slug": "tooth-extraction",
   "h1": "Tooth Extraction in Thanjavur",
   "sections": [
@@ -247,6 +248,7 @@
  "dental-crowns-and-bridges": {
   "metaTitle": "Best Dental Bridges and Crowns in Thanjavur | AVM Smiles",
   "metaDescription": "AVM Smiles delivers premium Dental Bridges & Crowns in Thanjavur to restore damaged or missing teeth with long-lasting, natural-looking solutions.",
+  "metaKeywords": "Dental Bridges & Crowns in Thanjavur, Dental Bridges & Crowns near Thanjavur",
   "slug": "dental-crowns-and-bridges",
   "h1": "Dental Bridges & Crowns in Thanjavur",
   "sections": [
@@ -561,6 +563,7 @@
  "dental-dentures": {
   "metaTitle": "Best Dental Dentures in Thanjavur | AVM Smiles",
   "metaDescription": "Get comfortable, natural-looking Dental Dentures in Thanjavur at AVM Smiles. Restore your smile, confidence, and chewing ability with expert care.",
+  "metaKeywords": "Dental Dentures in Thanjavur, Dental Dentures near Thanjavur",
   "slug": "dental-dentures",
   "h1": "Dental Dentures in Thanjavur",
   "sections": [
@@ -831,6 +834,7 @@
  "root-canal-treatment": {
   "metaTitle": "Best Root Canal Treatment in Thanjavur | AVM Smiles",
   "metaDescription": "AVM Smiles offers painless Root Canal Treatment in Thanjavur using modern technology to treat infection and preserve your natural teeth.",
+  "metaKeywords": "Root Canal Treatment in Thanjavur, Root Canal Treatment near Thanjavur",
   "slug": "root-canal-treatment",
   "h1": "Root Canal Treatment in Thanjavur",
   "sections": [
@@ -1104,6 +1108,7 @@
  "teeth-whitening-treatment": {
   "metaTitle": "Best Teeth Whitening Treatment in Thanjavur | AVM Smiles",
   "metaDescription": "Transform your smile with the Best Teeth Whitening Treatment in Thanjavur at AVM Smiles. Professional care for noticeably whiter teeth.",
+  "metaKeywords": "best teeth whitening treatment, dental whitening treatment, professional tooth whitening treatment, teeth whitening treatment cost, teeth whitening treatment dentist",
   "slug": "teeth-whitening-treatment",
   "h1": "Teeth Whitening Treatment in Thanjavur",
   "sections": [
@@ -1391,6 +1396,7 @@
  "dental-scaling-polishing": {
   "metaTitle": "Best Dental Scaling and Polishing in Thanjavur | AVM Smiles",
   "metaDescription": "Get the Best Dental Scaling and Polishing in Thanjavur at AVM Smiles. Remove plaque, stains, and maintain a healthy, sparkling smile.",
+  "metaKeywords": "dental scaling & polishing teeth, polishing after scaling, polishing teeth price, scaling and polishing of teeth cost, teeth cleaning and polishing cost",
   "slug": "dental-scaling-polishing",
   "h1": "Scaling & Polishing in Thanjavur",
   "sections": [
@@ -1764,6 +1770,7 @@
  "invisible-aligners": {
   "metaTitle": "Best Invisible Dental Aligners in Thanjavur | AVM Smiles",
   "metaDescription": "Choose AVM Smiles for the Best Invisible Dental Aligners in Thanjavur. Clear aligner solutions designed for lasting smile transformations.",
+  "metaKeywords": "invisible dental aligners in thanjavur, teeth clear aligners price, teeth invisible aligners in thanjavur, invisible aligners for teeth cost",
   "slug": "invisible-aligners",
   "h1": "Invisible Aligners in Thanjavur",
   "sections": [
@@ -2124,6 +2131,7 @@
  "invisible-braces": {
   "metaTitle": "Best Invisible Dental Teeth Braces in Thanjavur | AVM Smiles",
   "metaDescription": "AVM Smiles offers the Best Invisible Dental Teeth Braces in Thanjavur for a comfortable, nearly invisible smile correction solution.",
+  "metaKeywords": "clear braces for teeth, invisible braces on teeth in thanjavur, invisible dental teeth braces in thanjavur, metal and clear braces, teeth invisible braces price",
   "slug": "invisible-braces",
   "h1": "Invisible Braces in Thanjavur",
   "sections": [
@@ -2561,6 +2569,7 @@
  "dental-veneer-treatment": {
   "metaTitle": "Best Dental Veneer Treatment in Thanjavur | AVM Smiles",
   "metaDescription": "Transform your smile with the Best Dental Veneer Treatment in Thanjavur at AVM Smiles using high-quality, natural-looking veneers.",
+  "metaKeywords": "dental veneer treatment, teeth veneer treatment, veneer treatment cost, veneer treatment for teeth",
   "slug": "dental-veneer-treatment",
   "h1": "Veneer Treatment in Thanjavur",
   "sections": [
@@ -3001,10 +3010,6 @@
      {
       "t": "p",
       "text": "Book your consultation now and see the difference a beautiful smile can make."
-     },
-     {
-      "t": "p",
-      "text": "Best Dental Implants Treatment in Thanjavur | AVM Smiles"
      }
     ]
    }
@@ -3013,6 +3018,7 @@
  "dental-implants-treatment": {
   "metaTitle": "Best Dental Implants Treatment in Thanjavur | AVM Smiles",
   "metaDescription": "AVM Smiles offers the Best Dental Implants Treatment in Thanjavur with advanced technology, expert dentists, and long-lasting smile restoration care.",
+  "metaKeywords": "dental implants cleaning in Thanjavur, dental implants treatment in Thanjavur",
   "slug": "dental-implants-treatment",
   "h1": "Dental Implants in Thanjavur",
   "sections": [

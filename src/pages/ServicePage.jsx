@@ -11,7 +11,9 @@ function group(items) {
   const out = []
   for (let i = 0; i < items.length; i++) {
     const it = items[i]
-    if (it.t === 'h3' || it.t === 'card') {
+    if (it.t === 'steps') {
+      it.items.forEach((s) => out.push({ t: 'group', title: s.title, sub: '', body: s.text ? [{ t: 'p', text: s.text }] : [] }))
+    } else if (it.t === 'h3' || it.t === 'card') {
       const g = { t: 'group', title: it.t === 'h3' ? it.text : it.title, sub: '', body: [] }
       if (it.t === 'card') {
         // a card followed by more paragraphs uses its own text as a sub-title
@@ -25,18 +27,32 @@ function group(items) {
   return out
 }
 
-function useSeo(title, description) {
+function setMeta(selector, attr, value) {
+  const el = document.querySelector(selector)
+  if (!el) return () => {}
+  const prev = el.getAttribute(attr)
+  el.setAttribute(attr, value)
+  return () => el.setAttribute(attr, prev)
+}
+
+function useSeo(page) {
   useEffect(() => {
-    const prev = document.title
-    document.title = title
-    let meta = document.querySelector('meta[name="description"]')
-    const prevDesc = meta?.getAttribute('content')
-    if (meta) meta.setAttribute('content', description)
+    if (!page) return
+    const prevTitle = document.title
+    document.title = page.metaTitle
+    const undo = [
+      setMeta('meta[name="description"]', 'content', page.metaDescription),
+      setMeta('meta[name="keywords"]', 'content', page.metaKeywords),
+      setMeta('meta[property="og:title"]', 'content', page.metaTitle),
+      setMeta('meta[property="og:description"]', 'content', page.metaDescription),
+      setMeta('meta[name="twitter:title"]', 'content', page.metaTitle),
+      setMeta('link[rel="canonical"]', 'href', `https://avmsmilesdental.com/thanjavur/${page.slug}`),
+    ]
     return () => {
-      document.title = prev
-      if (meta && prevDesc) meta.setAttribute('content', prevDesc)
+      document.title = prevTitle
+      undo.forEach((u) => u())
     }
-  }, [title, description])
+  }, [page])
 }
 
 function Prose({ items }) {
@@ -196,7 +212,7 @@ export default function ServicePage({ treatment, setTreatment }) {
   const page = pages[slug]
   const svc = services.find((s) => s.slug === slug)
 
-  useSeo(page?.metaTitle ?? 'AVM Smiles', page?.metaDescription ?? '')
+  useSeo(page)
   useEffect(() => { if (svc) setTreatment(svc.title) }, [svc, setTreatment])
   useEffect(() => { window.scrollTo(0, 0) }, [slug])
 
