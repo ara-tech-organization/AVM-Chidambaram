@@ -3,7 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-route
 import { TopBar, Header, Footer, FloatingActions } from './components/Chrome'
 import Landing from './pages/Landing'
 import ServicePage from './pages/ServicePage'
-import { ContactPage, GalleryPage } from './pages/StaticPages'
+import { ContactPage, GalleryPage, ThankYouPage } from './pages/StaticPages'
 
 // Scroll to the #hash target after a route change, otherwise to the top.
 function ScrollManager() {
@@ -33,6 +33,7 @@ export default function App() {
           <Route path="/" element={<Landing {...shared} />} />
           <Route path="/contact-us" element={<ContactPage {...shared} />} />
           <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/thankyou" element={<ThankYouPage />} />
           <Route path="/:slug" element={<ServicePage {...shared} />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

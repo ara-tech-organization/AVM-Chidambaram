@@ -27,6 +27,7 @@ for (const p of Object.values(pages)) {
   h = setTag(h, /<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${esc(p.metaTitle)}"`)
   h = setTag(h, /<meta property="og:description" content="[^"]*"/, `<meta property="og:description" content="${esc(p.metaDescription)}"`)
   h = setTag(h, /<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${esc(p.metaTitle)}"`)
+  if (p.noindex) h = setTag(h, /<meta name="robots" content="[^"]*"/, '<meta name="robots" content="noindex, nofollow"')
   const dir = path.join(dist, p.slug)
   fs.mkdirSync(dir, { recursive: true })
   fs.writeFileSync(path.join(dir, 'index.html'), h)

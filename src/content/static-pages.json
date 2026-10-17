@@ -10,5 +10,12 @@
     "metaTitle": "Gallery | AVM Smiles Dental Clinic in Chidambaram",
     "metaDescription": "Browse the AVM Smiles gallery in Chidambaram to explore our dental clinic, treatment areas, modern facilities, and patient-friendly environment.",
     "metaKeywords": "AVM Smiles Chidambaram gallery, dental clinic photos Chidambaram, dentist in Chidambaram, dental clinic interiors, dental care"
+  },
+  "thankyou": {
+    "slug": "thankyou",
+    "metaTitle": "Thank You | AVM Smiles Dental Clinic in Chidambaram",
+    "metaDescription": "Thank you for booking with AVM Smiles in Chidambaram. Our team will contact you shortly to confirm your appointment.",
+    "metaKeywords": "AVM Smiles Chidambaram, dental appointment",
+    "noindex": true
   }
 }

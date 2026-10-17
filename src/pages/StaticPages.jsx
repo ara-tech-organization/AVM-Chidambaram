@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Icon, Btn, Reveal, Photo, A } from '../components/ui'
 import BookingForm from '../components/BookingForm'
 import { Gallery as BeforeAfter } from '../components/Sections'
@@ -108,5 +109,31 @@ export function GalleryPage() {
       </section>
       <BeforeAfter fullPage />
     </>
+  )
+}
+
+export function ThankYouPage() {
+  useSeo(seo.thankyou)
+  useEffect(() => {
+    const el = document.querySelector('meta[name="robots"]')
+    const prev = el?.getAttribute('content')
+    el?.setAttribute('content', 'noindex, nofollow')
+    return () => el?.setAttribute('content', prev)
+  }, [])
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 via-white to-white">
+      <div className="absolute -right-32 -top-32 h-[420px] w-[420px] rounded-full bg-brand-100/70 blur-3xl" aria-hidden="true" />
+      <div className="relative mx-auto max-w-2xl px-4 py-20 text-center sm:px-6 lg:py-28">
+        <span className="rise mx-auto grid h-20 w-20 place-items-center rounded-full bg-brand-50 text-brand-600"><Icon name="CircleCheck" size={40} /></span>
+        <h1 className="rise mt-6 text-[clamp(2rem,4.2vw,3rem)] font-bold leading-[1.15] text-brand-900" style={{ '--d': '100ms' }}>Thank You!</h1>
+        <p className="rise mt-4 leading-relaxed text-muted" style={{ '--d': '200ms' }}>
+          Your appointment request has been received. Our team at AVM Smiles, Chidambaram will contact you shortly to confirm your appointment.
+        </p>
+        <div className="rise mt-8 flex flex-wrap justify-center gap-3" style={{ '--d': '300ms' }}>
+          <Btn variant="primary" href="/">Back to Home</Btn>
+          <Btn variant="outline" href={clinic.phoneHref}><Icon name="Phone" size={18} /> {clinic.phone}</Btn>
+        </div>
+      </div>
+    </section>
   )
 }
