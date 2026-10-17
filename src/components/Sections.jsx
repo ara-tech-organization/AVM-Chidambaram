@@ -128,7 +128,7 @@ export function Services({ onPick }) {
                   <h3 className="text-lg font-semibold text-brand-900">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted flex-1">{s.text}</p>
                   <div className="mt-5 flex items-center justify-between">
-                  <A href={`/chidambaram/${s.slug}`} className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700">
+                  <A href={`/${s.slug}`} className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700">
                     Read more <Icon name="ArrowRight" size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
                   </A>
                   <A href="#book" onClick={() => onPick(s.title)} className="rounded-full bg-accent-50 px-3.5 py-1.5 text-xs font-semibold text-accent hover:bg-accent hover:text-white transition-colors duration-200">
@@ -213,7 +213,7 @@ export function Gallery({ fullPage = false }) {
           </div>
         </div>
         <Reveal className={`mt-10 text-center ${fullPage ? 'hidden' : ''}`}>
-          <Btn variant="primary" href="/chidambaram/gallery">View Full Gallery <Icon name="ArrowRight" size={18} className="transition-transform group-hover:translate-x-1" /></Btn>
+          <Btn variant="primary" href="/gallery">View Full Gallery <Icon name="ArrowRight" size={18} className="transition-transform group-hover:translate-x-1" /></Btn>
         </Reveal>
       </div>
     </section>

@@ -19,11 +19,11 @@ export const clinic = {
 }
 
 export const nav = [
-  { label: 'Home', href: '/chidambaram' },
-  { label: 'About Us', href: '/chidambaram#about' },
-  { label: 'Services', href: '/chidambaram#services', dropdown: true },
-  { label: 'Smile Gallery', href: '/chidambaram/gallery' },
-  { label: 'Contact Us', href: '/chidambaram/contact-us' },
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'Services', href: '/#services', dropdown: true },
+  { label: 'Smile Gallery', href: '/gallery' },
+  { label: 'Contact Us', href: '/contact-us' },
 ]
 
 export const heroChips = [

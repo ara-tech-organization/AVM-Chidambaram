@@ -2,7 +2,7 @@
 
 Landing page and 10 service pages for AVM Smiles Dental Clinic, Chidambaram.
 
-Live: https://ara-tech-organization.github.io/AVM-Chidambaram/chidambaram
+Live: https://ara-tech-organization.github.io/AVM-Chidambaram/
 
 ## Stack
 React 19, Vite, Tailwind CSS v4, Lucide icons, React Router. Font: Poppins.

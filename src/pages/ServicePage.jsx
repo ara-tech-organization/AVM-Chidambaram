@@ -193,7 +193,7 @@ export default function ServicePage({ treatment, setTreatment }) {
   const page = pages[slug]
   const svc = services.find((s) => s.slug === slug)
 
-  const seo = useMemo(() => page && { ...page, path: `/chidambaram/${page.slug}` }, [page])
+  const seo = useMemo(() => page && { ...page, path: `/${page.slug}` }, [page])
   useSeo(seo)
   useEffect(() => { if (svc) setTreatment(svc.title) }, [svc, setTreatment])
   useEffect(() => { window.scrollTo(0, 0) }, [slug])
@@ -206,7 +206,7 @@ export default function ServicePage({ treatment, setTreatment }) {
     return { intro, cta, main }
   }, [page])
 
-  if (!page || !svc) return <Navigate to="/chidambaram" replace />
+  if (!page || !svc) return <Navigate to="/" replace />
   const { intro, cta, main } = parts
 
   return (
@@ -216,9 +216,9 @@ export default function ServicePage({ treatment, setTreatment }) {
         <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.2fr_.8fr] lg:py-16">
           <div>
             <nav aria-label="Breadcrumb" className="rise flex flex-wrap items-center gap-1.5 text-xs text-muted">
-              <A href="/chidambaram" className="hover:text-brand-600">Home</A>
+              <A href="/" className="hover:text-brand-600">Home</A>
               <Icon name="ChevronRight" size={14} />
-              <A href="/chidambaram#services" className="hover:text-brand-600">Services</A>
+              <A href="/#services" className="hover:text-brand-600">Services</A>
               <Icon name="ChevronRight" size={14} />
               <span className="font-medium text-brand-700">{svc.title}</span>
             </nav>
@@ -284,7 +284,7 @@ export default function ServicePage({ treatment, setTreatment }) {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {services.filter((s) => s.slug !== slug).map((s, i) => (
               <Reveal key={s.slug} delay={(i % 5) * 60}>
-                <A href={`/chidambaram/${s.slug}`} className="group flex h-full items-center gap-3 rounded-2xl border border-line bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_48px_-16px_rgba(40,36,89,.3)]">
+                <A href={`/${s.slug}`} className="group flex h-full items-center gap-3 rounded-2xl border border-line bg-white p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_48px_-16px_rgba(40,36,89,.3)]">
                   <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white"><Icon name={s.icon} size={22} /></span>
                   <span className="text-sm font-semibold text-brand-900">{s.title}</span>
                 </A>

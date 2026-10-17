@@ -5,7 +5,7 @@ import { clinic, gallerySlots } from '../content/chidambaram'
 import { useSeo } from '../lib/seo'
 import meta from '../content/static-pages.json'
 
-const seo = Object.fromEntries(Object.entries(meta).map(([k, v]) => [k, { ...v, path: `/chidambaram/${v.slug}` }]))
+const seo = Object.fromEntries(Object.entries(meta).map(([k, v]) => [k, { ...v, path: `/${v.slug}` }]))
 
 function PageHero({ title, text }) {
   return (
@@ -13,7 +13,7 @@ function PageHero({ title, text }) {
       <div className="absolute -right-32 -top-32 h-[420px] w-[420px] rounded-full bg-brand-100/70 blur-3xl" aria-hidden="true" />
       <div className="relative mx-auto max-w-4xl px-4 py-12 text-center sm:px-6 lg:py-16">
         <nav aria-label="Breadcrumb" className="rise flex flex-wrap items-center justify-center gap-1.5 text-xs text-muted">
-          <A href="/chidambaram" className="hover:text-brand-600">Home</A>
+          <A href="/" className="hover:text-brand-600">Home</A>
           <Icon name="ChevronRight" size={14} />
           <span className="font-medium text-brand-700">{title}</span>
         </nav>
