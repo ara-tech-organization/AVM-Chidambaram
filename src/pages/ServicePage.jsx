@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { useSeo } from '../lib/seo'
 import { Navigate, useParams } from 'react-router'
 import { Icon, Btn, Reveal, A } from '../components/ui'
 import BookingForm from '../components/BookingForm'
@@ -27,34 +28,6 @@ function group(items) {
   return out
 }
 
-function setMeta(selector, attr, value) {
-  const el = document.querySelector(selector)
-  if (!el) return () => {}
-  const prev = el.getAttribute(attr)
-  el.setAttribute(attr, value)
-  return () => el.setAttribute(attr, prev)
-}
-
-function useSeo(page) {
-  useEffect(() => {
-    if (!page) return
-    const prevTitle = document.title
-    document.title = page.metaTitle
-    const undo = [
-      setMeta('meta[name="description"]', 'content', page.metaDescription),
-      setMeta('meta[name="keywords"]', 'content', page.metaKeywords),
-      setMeta('meta[property="og:title"]', 'content', page.metaTitle),
-      setMeta('meta[property="og:description"]', 'content', page.metaDescription),
-      setMeta('meta[name="twitter:title"]', 'content', page.metaTitle),
-      setMeta('link[rel="canonical"]', 'href', `https://avmsmilesdental.com/kumbakonam/${page.slug}`),
-    ]
-    return () => {
-      document.title = prevTitle
-      undo.forEach((u) => u())
-    }
-  }, [page])
-}
-
 function Prose({ items }) {
   return (
     <div className="space-y-4">
@@ -80,7 +53,7 @@ function Cards({ groups, numbered }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       {groups.map((g, i) => (
-        <Reveal key={g.title + i} delay={(i % 2) * 80}>
+        <Reveal key={g.title + i} delay={(i % 2) * 80} className={g.body.some((b) => b.t === 'ul') ? 'sm:col-span-2' : ''}>
           <div className="group h-full rounded-[20px] border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_48px_-16px_rgba(40,36,89,.3)]">
             <div className="flex items-center gap-3">
               <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600 text-sm font-semibold transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
@@ -91,10 +64,10 @@ function Cards({ groups, numbered }) {
                 {g.sub && <p className="text-xs font-medium text-accent">{g.sub}</p>}
               </div>
             </div>
-            <div className="mt-3 space-y-2 text-sm leading-relaxed text-muted">
+            <div className="mt-4 space-y-4 text-sm leading-relaxed text-muted">
               {g.body.map((b, k) =>
                 b.t === 'p' ? <p key={k}>{b.text}</p> : (
-                  <ul key={k} className="space-y-1.5">
+                  <ul key={k} className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
                     {b.items.map((x) => <li key={x} className="flex gap-2"><Icon name="Check" size={16} className="mt-1 shrink-0 text-brand-600" />{x}</li>)}
                   </ul>
                 ),
@@ -110,19 +83,27 @@ function Cards({ groups, numbered }) {
 function Table({ rows }) {
   const [head, ...rest] = rows
   return (
-    <div className="overflow-x-auto rounded-2xl border border-line">
-      <table className="w-full min-w-[480px] text-left text-sm">
-        <thead className="bg-brand-600 text-white">
-          <tr>{head.map((h) => <th key={h} className="px-4 py-3 font-semibold">{h}</th>)}</tr>
-        </thead>
-        <tbody>
-          {rest.map((r, i) => (
-            <tr key={r[0]} className={i % 2 ? 'bg-surface' : 'bg-white'}>
-              {r.map((c, k) => <td key={k} className={`px-4 py-3 ${k === 0 ? 'font-medium text-brand-900' : 'text-muted'}`}>{c}</td>)}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="grid gap-4 sm:grid-cols-2">
+      {rest.map((r, i) => (
+        <Reveal key={r[0]} delay={(i % 2) * 80}>
+          <div className="group h-full rounded-[20px] border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_48px_-16px_rgba(40,36,89,.3)]">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
+                <Icon name="Sparkles" size={20} />
+              </span>
+              <h3 className="font-semibold leading-snug text-brand-900">{r[0]}</h3>
+            </div>
+            <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
+              {r.slice(1).map((c, k) => (
+                <div key={k} className={`rounded-2xl px-4 py-3 ${k === 0 ? 'bg-brand-50' : 'bg-surface'}`}>
+                  <dt className="text-xs font-semibold text-brand-600">{head[k + 1]}</dt>
+                  <dd className="mt-1 text-ink">{c}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </Reveal>
+      ))}
     </div>
   )
 }
@@ -212,7 +193,8 @@ export default function ServicePage({ treatment, setTreatment }) {
   const page = pages[slug]
   const svc = services.find((s) => s.slug === slug)
 
-  useSeo(page)
+  const seo = useMemo(() => page && { ...page, path: `/kumbakonam/${page.slug}` }, [page])
+  useSeo(seo)
   useEffect(() => { if (svc) setTreatment(svc.title) }, [svc, setTreatment])
   useEffect(() => { window.scrollTo(0, 0) }, [slug])
 
@@ -224,8 +206,6 @@ export default function ServicePage({ treatment, setTreatment }) {
     return { intro, cta, main }
   }, [page])
 
-  if (slug === 'gallery') return <Navigate to="/kumbakonam#gallery" replace />
-  if (slug === 'contact-us') return <Navigate to="/kumbakonam#contact" replace />
   if (!page || !svc) return <Navigate to="/kumbakonam" replace />
   const { intro, cta, main } = parts
 

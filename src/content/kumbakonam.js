@@ -2,7 +2,7 @@ import { asset } from '../lib/asset'
 
 export const clinic = {
   name: 'AVM Smiles',
-  // TODO: contact details below come from the Kumbakonam "Contact Us" page of the content doc; replace with the client's final values
+  // contact details come from the Kumbakonam "Contact Us" page of the client's content doc
   phone: '+91 8071404432',
   phoneHref: 'tel:+918071404432',
   // TODO: confirm the WhatsApp number with the client
@@ -10,20 +10,20 @@ export const clinic = {
   email: 'avmsmiles.kumbakonam@gmail.com',
   address: 'No 1/317/1B, Lakshmi Vilas St, nearby Sri Annamalai Stationery, Anna Nagar, Kumbakonam, Tamil Nadu 612001.',
   shortAddress: 'Anna Nagar, Kumbakonam',
-  hours: 'Monday - Saturday: 9:00 AM - 8:00 PM', // TODO: the doc's Contact page says 7:00 PM, confirm
+  hours: 'Monday - Saturday: 9:00 AM - 7:00 PM', // Contact Us page says 7 PM; the doc's footer outline says 8 PM
   mapsHref: 'https://maps.app.goo.gl/SQQjnadApF1ourYM9',
   mapEmbed:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.0379765290795!2d79.38168217451943!3d10.960503955772436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5533437d2f0edb%3A0x7eeed8200bf8bc53!2sAVMSmiles%20Dental%20Wellness!5e0!3m2!1sen!2sin!4v1792144830617!5m2!1sen!2sin',
-  // TODO: replace with the real Kumbakonam social profile URLs
-  social: { facebook: 'https://facebook.com', instagram: 'https://instagram.com', youtube: 'https://youtube.com' },
+  // from the Contact Us page of the content doc; it gives no YouTube URL, so that icon is hidden until one is added
+  social: { facebook: 'https://www.facebook.com/smiles.kumbakonam', instagram: 'https://www.instagram.com/avmsmiles.kumbakonam/', youtube: '' },
 }
 
 export const nav = [
   { label: 'Home', href: '/kumbakonam' },
   { label: 'About Us', href: '/kumbakonam#about' },
   { label: 'Services', href: '/kumbakonam#services', dropdown: true },
-  { label: 'Smile Gallery', href: '/kumbakonam#gallery' },
-  { label: 'Contact Us', href: '/kumbakonam#contact' },
+  { label: 'Smile Gallery', href: '/kumbakonam/gallery' },
+  { label: 'Contact Us', href: '/kumbakonam/contact-us' },
 ]
 
 export const heroChips = [

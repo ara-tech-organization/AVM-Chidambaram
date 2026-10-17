@@ -134,7 +134,7 @@ export function Footer() {
           </span>
           <p className="mt-5 text-sm leading-relaxed">Healthy Smiles Start Here &ndash; Care That Lasts.</p>
           <div className="mt-5 flex gap-3">
-            {social.map(([label, href, d]) => (
+            {social.filter(([, href]) => href).map(([label, href, d]) => (
               <A key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="grid place-items-center h-10 w-10 rounded-full bg-white/10 hover:bg-accent hover:-translate-y-0.5 text-white transition-all duration-200">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" fillRule="evenodd" aria-hidden="true"><path d={d} /></svg>
               </A>

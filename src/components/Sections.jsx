@@ -193,14 +193,14 @@ function Compare() {
   )
 }
 
-export function Gallery() {
+export function Gallery({ fullPage = false }) {
   return (
-    <section id="gallery" className="py-20 lg:py-28">
+    <section id="gallery" className={fullPage ? 'bg-section py-14 lg:py-20' : 'py-20 lg:py-28'}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionHead eyebrow="Before & After Smile Gallery" title="Real Patient Transformations" text="See the genuine smile transformations achieved by our experienced Kumbakonam dental team." />
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] items-start">
           <Reveal><Compare /></Reveal>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className={`grid grid-cols-2 sm:grid-cols-3 gap-3 ${fullPage ? 'hidden' : ''}`}>
             {gallerySlots.map((g, i) => (
               <Reveal key={g.label} delay={i * 60}>
                 <div className="group aspect-square overflow-hidden rounded-2xl">
@@ -212,7 +212,7 @@ export function Gallery() {
             ))}
           </div>
         </div>
-        <Reveal className="mt-10 text-center">
+        <Reveal className={`mt-10 text-center ${fullPage ? 'hidden' : ''}`}>
           <Btn variant="primary" href="/kumbakonam/gallery">View Full Gallery <Icon name="ArrowRight" size={18} className="transition-transform group-hover:translate-x-1" /></Btn>
         </Reveal>
       </div>

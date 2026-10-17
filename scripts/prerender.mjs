@@ -5,7 +5,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 
 const dist = path.resolve('dist')
-const pages = JSON.parse(fs.readFileSync('src/content/services.json', 'utf8'))
+const pages = {
+  ...JSON.parse(fs.readFileSync('src/content/services.json', 'utf8')),
+  ...JSON.parse(fs.readFileSync('src/content/static-pages.json', 'utf8')),
+}
 const template = fs.readFileSync(path.join(dist, 'index.html'), 'utf8')
 const esc = (s) => s.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
 
@@ -32,4 +35,4 @@ for (const p of Object.values(pages)) {
 // the landing page keeps the homepage meta data from index.html
 fs.mkdirSync(path.join(dist, 'kumbakonam'), { recursive: true })
 fs.writeFileSync(path.join(dist, 'kumbakonam', 'index.html'), template)
-console.log(`prerender: ${Object.keys(pages).length} service pages + landing`)
+console.log(`prerender: ${Object.keys(pages).length} pages + landing`)
