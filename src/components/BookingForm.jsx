@@ -123,15 +123,16 @@ export default function BookingForm({ id, treatment, setTreatment, dark = false 
           <input id={`${id}-phone`} className={field} placeholder="10-digit mobile number" inputMode="tel" value={form.phone} onChange={set('phone')} autoComplete="tel" aria-invalid={!!errors.phone} />
           {errors.phone && <p className="mt-1 text-xs text-accent flex items-center gap-1"><Icon name="CircleAlert" size={14} />{errors.phone}</p>}
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="@container"><div className="grid gap-4 @md:grid-cols-2">
           <div>
             <label htmlFor={`${id}-date`} className="mb-1.5 block text-xs font-medium text-muted">Preferred Date</label>
-            <input id={`${id}-date`} type="date" className={field} value={form.date} onChange={set('date')} min={new Date().toISOString().slice(0, 10)} />
+            <input id={`${id}-date`} type="date" className={`${field} min-w-0`} value={form.date} onChange={set('date')} min={new Date().toISOString().slice(0, 10)} />
           </div>
           <div>
             <label htmlFor={`${id}-tx`} className="mb-1.5 block text-xs font-medium text-muted">Treatment Required</label>
             <TreatmentSelect id={`${id}-tx`} value={treatment} onChange={setTreatment} />
           </div>
+        </div>
         </div>
         {errors.form && <p className="text-xs text-accent">{errors.form}</p>}
         <Btn variant="accent" type="submit" disabled={busy} className="w-full mt-1">
