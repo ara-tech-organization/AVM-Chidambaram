@@ -2,7 +2,7 @@
 import { asset } from '../lib/asset'
 import { Icon, Btn, Reveal, SectionHead, Photo, A } from './ui'
 import BookingForm from './BookingForm'
-import { clinic, heroChips, services, why, steps, testimonials, faqs, gallerySlots, transformations } from '../content/kumbakonam'
+import { clinic, heroChips, services, why, steps, testimonials, faqs, gallerySlots, transformations } from '../content/chidambaram'
 
 export function Hero({ treatment, setTreatment }) {
   return (
@@ -11,16 +11,16 @@ export function Hero({ treatment, setTreatment }) {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-12 lg:py-20 grid gap-12 lg:grid-cols-[1.1fr_.9fr] items-center">
         <div>
           <p className="rise inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-1.5 text-xs font-semibold text-brand-700" style={{ '--d': '0ms' }}>
-            <Icon name="MapPin" size={14} /> Dental Clinic in Kumbakonam
+            <Icon name="MapPin" size={14} /> Dental Clinic in Chidambaram
           </p>
           <h1 className="rise mt-5 text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.15] text-brand-900" style={{ '--d': '100ms' }}>
-            AVM Smiles &ndash; Best Dental Clinic in Kumbakonam for <span className="text-brand-600">Dependable Care</span>
+            AVM Smiles &ndash; Best Dental Clinic in Chidambaram for <span className="text-brand-600">Quality Care</span>
           </h1>
           <p className="rise mt-5 max-w-xl text-base leading-relaxed text-muted" style={{ '--d': '200ms' }}>
-            AVM Smiles is a trusted dental clinic in Kumbakonam offering advanced treatments, experienced dentists, and dedicated care for patients of all ages. From routine dental visits to full smile makeovers and implants in Kumbakonam, we bring together modern equipment and thoughtful treatment planning to support your long-term oral health.
+            AVM Smiles is a well-regarded dental clinic in Chidambaram offering advanced treatments, skilled dentists, and attentive care for patients across all age groups. From regular dental checkups to complete smile makeovers and implants in Chidambaram, we combine current technology with thoughtful, patient-centered treatment planning for lasting oral health.
           </p>
           <p className="rise mt-6 text-sm font-semibold uppercase tracking-[.18em] text-accent" style={{ '--d': '280ms' }}>
-            Healthy Smiles Start Here &ndash; Care That Lasts
+            Stronger Teeth, Brighter Smiles, Lasting Care
           </p>
           <ul className="mt-4 flex flex-wrap gap-2.5">
             {heroChips.map((c, i) => (
@@ -89,10 +89,10 @@ export function About() {
           </div>
         </Reveal>
         <div>
-          <SectionHead center={false} eyebrow="About AVM Smiles" title="Kumbakonam's Dependable Dental Care Provider" />
+          <SectionHead center={false} eyebrow="About AVM Smiles" title="Chidambaram's Trusted Choice for Dental Care" />
           <Reveal delay={100} className="-mt-6 space-y-4 text-muted leading-relaxed">
-            <p>At AVM Smiles, we're committed to offering the best dental clinic services in Kumbakonam through advanced treatment methods, compassionate staff, and consistently positive patient experiences. Our clinic emphasizes preventive, restorative, cosmetic, and orthodontic dentistry to help patients enjoy healthier, more confident smiles.</p>
-            <p>From simple dental cleanings to complete smile transformations, our team brings together experience, technology, and genuine care to deliver the best dental care in Kumbakonam for the whole family.</p>
+            <p>At AVM Smiles, we focus on delivering the best dental clinic services in Chidambaram through modern treatment approaches, attentive care, and rewarding patient experiences. Our clinic prioritizes preventive, restorative, cosmetic, and orthodontic dentistry to help patients achieve stronger, more confident smiles.</p>
+            <p>From routine cleanings to full smile transformations, our team combines skill, technology, and genuine attention to provide the best dental care in Chidambaram for every member of the family.</p>
           </Reveal>
           <div className="mt-8 grid grid-cols-2 gap-3">
             {pts.map(([i, t], k) => (
@@ -128,7 +128,7 @@ export function Services({ onPick }) {
                   <h3 className="text-lg font-semibold text-brand-900">{s.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted flex-1">{s.text}</p>
                   <div className="mt-5 flex items-center justify-between">
-                  <A href={`/kumbakonam/${s.slug}`} className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700">
+                  <A href={`/chidambaram/${s.slug}`} className="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 hover:text-brand-700">
                     Read more <Icon name="ArrowRight" size={16} className="transition-transform duration-200 group-hover:translate-x-1" />
                   </A>
                   <A href="#book" onClick={() => onPick(s.title)} className="rounded-full bg-accent-50 px-3.5 py-1.5 text-xs font-semibold text-accent hover:bg-accent hover:text-white transition-colors duration-200">
@@ -149,7 +149,7 @@ export function Why() {
   return (
     <section className="bg-brand-900 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHead light eyebrow="Our promise" title="Why Choose AVM Smiles Kumbakonam?" />
+        <SectionHead light eyebrow="Our promise" title="Why Choose AVM Smiles Chidambaram?" />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {why.map((w, i) => (
             <Reveal key={w.title} delay={(i % 3) * 90}>
@@ -197,7 +197,7 @@ export function Gallery({ fullPage = false }) {
   return (
     <section id="gallery" className={fullPage ? 'bg-section py-14 lg:py-20' : 'py-20 lg:py-28'}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHead eyebrow="Before & After Smile Gallery" title="Real Patient Transformations" text="See the genuine smile transformations achieved by our experienced Kumbakonam dental team." />
+        <SectionHead eyebrow="Before & After Smile Gallery" title="Real Patient Transformations" text="Explore genuine smile makeovers created by our skilled Chidambaram dental team." />
         <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] items-start">
           <Reveal><Compare /></Reveal>
           <div className={`grid grid-cols-2 sm:grid-cols-3 gap-3 ${fullPage ? 'hidden' : ''}`}>
@@ -213,7 +213,7 @@ export function Gallery({ fullPage = false }) {
           </div>
         </div>
         <Reveal className={`mt-10 text-center ${fullPage ? 'hidden' : ''}`}>
-          <Btn variant="primary" href="/kumbakonam/gallery">View Full Gallery <Icon name="ArrowRight" size={18} className="transition-transform group-hover:translate-x-1" /></Btn>
+          <Btn variant="primary" href="/chidambaram/gallery">View Full Gallery <Icon name="ArrowRight" size={18} className="transition-transform group-hover:translate-x-1" /></Btn>
         </Reveal>
       </div>
     </section>
@@ -263,7 +263,7 @@ export function Testimonials() {
                 <blockquote className="mt-4 text-sm leading-relaxed text-ink">{t}</blockquote>
                 <figcaption className="mt-5 flex items-center gap-3 text-xs text-muted">
                   <span className="grid h-9 w-9 place-items-center rounded-full bg-brand-50 text-brand-600"><Icon name="User" size={18} /></span>
-                  Verified patient, Kumbakonam
+                  Verified patient, Chidambaram
                 </figcaption>
               </figure>
             </Reveal>
@@ -313,8 +313,8 @@ export function BookSection({ treatment, setTreatment }) {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 grid gap-12 lg:grid-cols-2 items-center">
         <Reveal className="text-white">
           <p className="text-xs font-semibold uppercase tracking-[.18em] text-brand-200 mb-3">Book now</p>
-          <h2 className="text-[clamp(1.625rem,3vw,2.5rem)] font-semibold leading-tight">Book Your Dental Consultation in Kumbakonam Today</h2>
-          <p className="mt-5 leading-relaxed text-brand-100">Searching for the best dental clinic in Kumbakonam? AVM Smiles is committed to providing advanced treatments, personalized attention, experienced specialists, and genuine patient satisfaction.</p>
+          <h2 className="text-[clamp(1.625rem,3vw,2.5rem)] font-semibold leading-tight">Book Your Dental Consultation in Chidambaram Today</h2>
+          <p className="mt-5 leading-relaxed text-brand-100">Looking for the best dental clinic in Chidambaram? AVM Smiles is dedicated to offering advanced treatments, personalized care, experienced specialists, and consistent patient satisfaction.</p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Btn variant="light" href={clinic.phoneHref}><Icon name="Phone" size={18} /> {clinic.phone}</Btn>
             <Btn variant="whatsapp" href={clinic.whatsappHref} target="_blank" rel="noreferrer"><Icon name="MessageCircle" size={18} /> WhatsApp</Btn>
@@ -334,7 +334,7 @@ export function Location() {
         <div className="grid gap-6 lg:grid-cols-[1.4fr_1fr]">
           <Reveal>
             <div className="overflow-hidden rounded-[28px] border border-line shadow-[0_18px_48px_-16px_rgba(40,36,89,.25)] h-80 lg:h-full min-h-80">
-              <iframe title="AVM Smiles Kumbakonam on Google Maps" src={clinic.mapEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-full w-full border-0" />
+              <iframe title="AVM Smiles Chidambaram on Google Maps" src={clinic.mapEmbed} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="h-full w-full border-0" />
             </div>
           </Reveal>
           <Reveal delay={100} className="space-y-4">

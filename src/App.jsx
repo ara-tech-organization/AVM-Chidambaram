@@ -30,12 +30,12 @@ export default function App() {
       <Header />
       <main>
         <Routes>
-          <Route path="/" element={<Navigate to="/kumbakonam" replace />} />
-          <Route path="/kumbakonam" element={<Landing {...shared} />} />
-          <Route path="/kumbakonam/contact-us" element={<ContactPage {...shared} />} />
-          <Route path="/kumbakonam/gallery" element={<GalleryPage />} />
-          <Route path="/kumbakonam/:slug" element={<ServicePage {...shared} />} />
-          <Route path="*" element={<Navigate to="/kumbakonam" replace />} />
+          <Route path="/" element={<Navigate to="/chidambaram" replace />} />
+          <Route path="/chidambaram" element={<Landing {...shared} />} />
+          <Route path="/chidambaram/contact-us" element={<ContactPage {...shared} />} />
+          <Route path="/chidambaram/gallery" element={<GalleryPage />} />
+          <Route path="/chidambaram/:slug" element={<ServicePage {...shared} />} />
+          <Route path="*" element={<Navigate to="/chidambaram" replace />} />
         </Routes>
       </main>
       <Footer />

@@ -1,7 +1,7 @@
 ﻿import { useEffect, useRef, useState } from 'react'
 import { asset } from '../lib/asset'
 import { Icon, Btn, A } from './ui'
-import { clinic, nav, services } from '../content/kumbakonam'
+import { clinic, nav, services } from '../content/chidambaram'
 
 export function TopBar() {
   return (
@@ -47,7 +47,7 @@ export function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 h-[68px] lg:h-[76px] flex items-center justify-between">
-        <A href="/kumbakonam" aria-label="AVM Smiles home">
+        <A href="/chidambaram" aria-label="AVM Smiles home">
           <img src={asset('/assets/images/avm-logo.png')} alt="AVM Smiles" className="h-11 lg:h-[52px] w-auto" width="87" height="52" />
         </A>
 
@@ -61,7 +61,7 @@ export function Header() {
                 <div className="invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:visible group-focus-within:opacity-100 group-focus-within:translate-y-0 transition-all duration-200 absolute left-0 top-full pt-2">
                   <div className="w-72 rounded-2xl bg-white p-2 shadow-[0_18px_48px_-16px_rgba(40,36,89,.35)] border border-line">
                     {services.map((s) => (
-                      <A key={s.slug} href={`/kumbakonam/${s.slug}`} className="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-ink hover:bg-brand-50 hover:text-brand-600 transition-colors">
+                      <A key={s.slug} href={`/chidambaram/${s.slug}`} className="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-ink hover:bg-brand-50 hover:text-brand-600 transition-colors">
                         <Icon name={s.icon} size={18} className="text-brand-500" /> {s.title}
                       </A>
                     ))}
@@ -105,7 +105,7 @@ export function Header() {
           ))}
           <p className="mt-6 mb-2 text-xs font-semibold uppercase tracking-[.18em] text-muted">Services</p>
           {services.map((s) => (
-            <A key={s.slug} href={`/kumbakonam/${s.slug}`} className="flex items-center gap-3 py-2 text-sm text-ink">
+            <A key={s.slug} href={`/chidambaram/${s.slug}`} className="flex items-center gap-3 py-2 text-sm text-ink">
               <Icon name={s.icon} size={18} className="text-brand-500" /> {s.title}
             </A>
           ))}
@@ -153,7 +153,7 @@ export function Footer() {
           <h3 className="text-white font-semibold mb-4">Services</h3>
           <ul className="space-y-2.5 text-sm">
             {services.map((s) => (
-              <li key={s.slug}><A href={`/kumbakonam/${s.slug}`} className="hover:text-white transition-colors">{s.title}</A></li>
+              <li key={s.slug}><A href={`/chidambaram/${s.slug}`} className="hover:text-white transition-colors">{s.title}</A></li>
             ))}
           </ul>
         </div>
@@ -161,15 +161,14 @@ export function Footer() {
           <h3 className="text-white font-semibold mb-4">Contact</h3>
           <ul className="space-y-3 text-sm">
             <li className="flex gap-3"><Icon name="Phone" size={18} className="shrink-0 mt-0.5 text-brand-300" /><A href={clinic.phoneHref} className="hover:text-white">{clinic.phone}</A></li>
-            <li className="flex gap-3"><Icon name="MessageCircle" size={18} className="shrink-0 mt-0.5 text-brand-300" /><A href={clinic.whatsappHref} className="hover:text-white">WhatsApp us</A></li>
-            <li className="flex gap-3"><Icon name="Mail" size={18} className="shrink-0 mt-0.5 text-brand-300" /><A href={`mailto:${clinic.email}`} className="hover:text-white break-all">{clinic.email}</A></li>
+            <li className="flex gap-3"><Icon name="Mail" size={18} className="shrink-0 mt-0.5 text-brand-300" /><A href={`mailto:${clinic.email}`} className="hover:text-white whitespace-nowrap text-[13px] sm:text-sm">{clinic.email}</A></li>
             <li className="flex gap-3"><Icon name="MapPin" size={18} className="shrink-0 mt-0.5 text-brand-300" /><span>{clinic.address}</span></li>
             <li className="flex gap-3"><Icon name="Clock" size={18} className="shrink-0 mt-0.5 text-brand-300" /><span>{clinic.hours}</span></li>
           </ul>
         </div>
       </div>
       <div className="border-t border-white/10 py-5 text-center text-xs text-brand-300 pb-24 lg:pb-5">
-        &copy; {new Date().getFullYear()} AVM Smiles Dental Clinic, Kumbakonam. All rights reserved.
+        &copy; {new Date().getFullYear()} AVM Smiles Dental Clinic, Chidambaram. All rights reserved.
       </div>
     </footer>
   )

@@ -1,4 +1,4 @@
-// Writes dist/kumbakonam/<slug>/index.html for each service page with that page's own
+// Writes dist/chidambaram/<slug>/index.html for each service page with that page's own
 // <title>, description, keywords, canonical and social tags, so crawlers that do not run
 // JavaScript see the correct meta data instead of the homepage's.
 import fs from 'node:fs'
@@ -18,7 +18,7 @@ const setTag = (html, re, replacement) => {
 }
 
 for (const p of Object.values(pages)) {
-  const url = `https://avmsmilesdental.com/kumbakonam/${p.slug}`
+  const url = `https://avmsmilesdental.com/chidambaram/${p.slug}`
   let h = template
   h = setTag(h, /<title>.*?<\/title>/s, `<title>${esc(p.metaTitle)}</title>`)
   h = setTag(h, /<meta name="description" content="[^"]*"/, `<meta name="description" content="${esc(p.metaDescription)}"`)
@@ -27,12 +27,12 @@ for (const p of Object.values(pages)) {
   h = setTag(h, /<meta property="og:title" content="[^"]*"/, `<meta property="og:title" content="${esc(p.metaTitle)}"`)
   h = setTag(h, /<meta property="og:description" content="[^"]*"/, `<meta property="og:description" content="${esc(p.metaDescription)}"`)
   h = setTag(h, /<meta name="twitter:title" content="[^"]*"/, `<meta name="twitter:title" content="${esc(p.metaTitle)}"`)
-  const dir = path.join(dist, 'kumbakonam', p.slug)
+  const dir = path.join(dist, 'chidambaram', p.slug)
   fs.mkdirSync(dir, { recursive: true })
   fs.writeFileSync(path.join(dir, 'index.html'), h)
 }
 
 // the landing page keeps the homepage meta data from index.html
-fs.mkdirSync(path.join(dist, 'kumbakonam'), { recursive: true })
-fs.writeFileSync(path.join(dist, 'kumbakonam', 'index.html'), template)
+fs.mkdirSync(path.join(dist, 'chidambaram'), { recursive: true })
+fs.writeFileSync(path.join(dist, 'chidambaram', 'index.html'), template)
 console.log(`prerender: ${Object.keys(pages).length} pages + landing`)
