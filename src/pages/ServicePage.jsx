@@ -80,7 +80,7 @@ function Cards({ groups, numbered }) {
   )
 }
 
-function Table({ rows }) {
+function Table({ rows, note }) {
   const [head, ...rest] = rows
   return (
     <Reveal>
@@ -98,6 +98,11 @@ function Table({ rows }) {
                 {r.slice(1).map((c, k) => <td key={k} className="px-5 py-4 text-muted">{c}</td>)}
               </tr>
             ))}
+            {note && (
+              <tr className={rest.length % 2 ? 'bg-surface' : 'bg-white'}>
+                <td colSpan={head.length} className="px-5 py-4 font-semibold text-brand-900">{note}</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
@@ -171,9 +176,16 @@ function Section({ s }) {
               if (gr.length) nodes.push(<Cards key={`g${nodes.length}`} groups={gr} numbered={isProcess} />)
               run = []; gr = []
             }
-            items.forEach((it) => {
+            let skip = -1
+            items.forEach((it, idx) => {
+              if (idx === skip) return
               if (it.t === 'group') { if (run.length) flush(); gr.push(it) }
-              else if (it.t === 'table') { flush(); nodes.push(<Table key={`t${nodes.length}`} rows={it.rows} />) }
+              else if (it.t === 'table') {
+                flush()
+                const note = items[idx + 1]?.t === 'p' ? items[idx + 1].text : ''
+                if (note) skip = idx + 1
+                nodes.push(<Table key={`t${nodes.length}`} rows={it.rows} note={note} />)
+              }
               else { if (gr.length) flush(); run.push(it) }
             })
             flush()
