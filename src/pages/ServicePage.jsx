@@ -83,28 +83,25 @@ function Cards({ groups, numbered }) {
 function Table({ rows }) {
   const [head, ...rest] = rows
   return (
-    <div className="grid gap-4 sm:grid-cols-2">
-      {rest.map((r, i) => (
-        <Reveal key={r[0]} delay={(i % 2) * 80}>
-          <div className="group h-full rounded-[20px] border border-line bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_48px_-16px_rgba(40,36,89,.3)]">
-            <div className="flex items-center gap-3">
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-brand-50 text-brand-600 transition-colors duration-300 group-hover:bg-brand-600 group-hover:text-white">
-                <Icon name="Sparkles" size={20} />
-              </span>
-              <h3 className="font-semibold leading-snug text-brand-900">{r[0]}</h3>
-            </div>
-            <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
-              {r.slice(1).map((c, k) => (
-                <div key={k} className={`rounded-2xl px-4 py-3 ${k === 0 ? 'bg-brand-50' : 'bg-surface'}`}>
-                  <dt className="text-xs font-semibold text-brand-600">{head[k + 1]}</dt>
-                  <dd className="mt-1 text-ink">{c}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </Reveal>
-      ))}
-    </div>
+    <Reveal>
+      <div className="overflow-x-auto rounded-2xl border border-line bg-white shadow-[0_18px_48px_-16px_rgba(40,36,89,.2)]">
+        <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
+          <thead>
+            <tr className="bg-brand-600 text-white">
+              {head.map((h) => <th key={h} scope="col" className="px-5 py-4 font-semibold">{h}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {rest.map((r, i) => (
+              <tr key={r[0]} className={i % 2 ? 'bg-surface' : 'bg-white'}>
+                <th scope="row" className="px-5 py-4 font-semibold text-brand-900">{r[0]}</th>
+                {r.slice(1).map((c, k) => <td key={k} className="px-5 py-4 text-muted">{c}</td>)}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </Reveal>
   )
 }
 
