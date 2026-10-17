@@ -18,7 +18,7 @@ const setTag = (html, re, replacement) => {
 }
 
 for (const p of Object.values(pages)) {
-  const url = `https://avmsmilesdental.com/${p.slug}`
+  const url = `https://avmsmilesdental.com/chidambaram/${p.slug}`
   let h = template
   h = setTag(h, /<title>.*?<\/title>/s, `<title>${esc(p.metaTitle)}</title>`)
   h = setTag(h, /<meta name="description" content="[^"]*"/, `<meta name="description" content="${esc(p.metaDescription)}"`)
